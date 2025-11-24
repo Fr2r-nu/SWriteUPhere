@@ -1,5 +1,5 @@
-## 1
 
+### 1
 ## IDE
 
 - An easy box to polish your enumeration skills!
@@ -29,13 +29,13 @@
 - What happens if we search for Codiad 2.8.4? We'll find a written exploit on Exploit DB for it: Codiad 2.8.4 - **Remote Code Execution (Authenticated)**
 - Looking at the name of the challenge, this is probably the exploit we should use. This script gets a reverse shell for us, but the problem is we need to find valid username and password first **(Authenticated)**
 
-3. FTP - Anonymous - Finding John and Drac: We found a login page in the previous step. Now let's see what we can find using FTP. I entered `ftp [target-ip-address] 21` and used "ftp" as both username and password, and I could log in! This works because FTP can have a type of authentication called "**Anonymous Authentication**" that was enabled in this case.
+3. FTP - Finding John and Drac: We found a login page in the previous step. Now let's see what we can find using FTP. I entered `ftp [target-ip-address] 21` and used "ftp" as both username and password, and I could log in! This works because FTP can have a type of authentication called "**Anonymous Authentication**", it was enabled in this case.
 
    If we use `ls -la` here, we can see a directory named `...`. If we navigate to that and see what's inside, we'll find a file named `-`. We downloaded the file using `get [file-name]` and opened it on our computer:
 
    ![Viewing downloaded file](Images/ide/ftp-transfer-and-view.png)
 
-- As you can see, the contents inside the file tell us that we have at least 2 usernames: john and drac. We also know that john might use default passwords to log in.
+- As you can see, the contents inside the file tell us that we have at least 2 usernames: john and drac. We also know that john uses default passwords to log in.
 
 - Back to the Codiad login page, if we test "john" as username and try some common passwords, we find that we can log in using `john` as username and `password` as password.
   
@@ -54,7 +54,7 @@
     mysql -u drac -p 'Th3dRaCULa1sR3aL'
     ```
 
-4. Where is root.txt? How to read root.txt? As the name suggests, we need to become root. Now we are drac. Running `sudo -l` shows what drac can do as root: the -l(list) option lists the allowed (and forbidden) commands for the invoking user.
+4. Where is root.txt? As the name suggests, we need to become root. Now we are drac. Running `sudo -l` shows what drac can do as root: the -l(list) option lists the allowed (and forbidden) commands for the invoking user.
 
    ![sudo -l](Images/ide/sudo-l.png)
 
