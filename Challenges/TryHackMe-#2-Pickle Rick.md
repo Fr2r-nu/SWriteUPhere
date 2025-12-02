@@ -18,7 +18,7 @@
 3.  I right-clicked and chose **"View Page Source"** - I found a username there: `R1ckRul3s`
     ![username found in "Page Source"](Challenges/Images/pickle-rick/page-source.png)
 
-4.  I also looked at request-responses using **"Inspect (Developer Tools)"**, but didn't find anything else.
+4.  I also looked at request-responses using **"Inspect (Developer Tools)"**, but didn't find anything useful.
 
 5.  **Content Discovery**: Using **gobuster** I found:
     `gobuster dir --url http://target-ip/ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt`
