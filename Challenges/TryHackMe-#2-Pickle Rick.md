@@ -13,31 +13,40 @@
     ```
 
 2.  Navigating to `http://target-ip:80` shows us a webpage with this text:
+
     ![web-application](Images/pickle-rick/web-application.png)
 
 3.  I right-clicked and chose **"View Page Source"** - I found a username there: `R1ckRul3s`
+
     ![username found in "Page Source"](Images/pickle-rick/page-source.png)
 
 4.  I also looked at request-responses using **"Inspect (Developer Tools)"**, but didn't find anything useful.
 
 5.  **Content Discovery**: Using **gobuster** I found:
     `gobuster dir --url http://target-ip/ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt`
+    
     ![gobuster-result](Images/pickle-rick/gobuster-result.png)
+    
     - Inside **`robots.txt`**, I found `Wubbalubbadubdub`. Since the robots.txt file contains paths we don't want crawlers to see, I added it to `http://<target-ip>/Wubbalubbadubdub`, but that page did not exist. Another idea is that it may be the password Rick was talking about on the main page of the web app.
     - **`robots.txt`** is a text file that tells robots (such as search engine indexers) how to behave, instructing them not to crawl certain paths on the website. It is placed within the root directory of a website.
     - Testing another wordlist:
       `gobuster dir --url http://target-ip/ -w /usr/share/wordlists/SecLists/Discovery/Web-Content/Logins.fuzz.txt`
+      
       ![finding a login page using 'gobuster'](Images/pickle-rick/gobuster-result-2.png)
 
-6.  **Login**: Using the username `R1ckRul3s` and password `Wubbalubbadubdub`, I logged into `http://target-ip/login.php`. This gave us a command panel:
+6.  **Login**: Using the username `R1ckRul3s` and password `Wubbalubbadubdub`, I logged into `http://target-ip/login.php`. This gave a command panel:
+   
     ![login.php](Images/pickle-rick/login-page.png)
+    
     ![portal.php](Images/pickle-rick/command-panel.png)
 
 7.  **Commands that Led to Finding the 3 Flags (Ingredients)**:
     - `whoami` --> **`www-data`**
     - `ls -la` --> It seems the first flag is in the **`"Sup3rS3cretPickl3Ingred.txt"`** file.
     - The `cat` command did not work. I viewed the content of the file using `less Sup3rS3cretPickl3Ingred.txt` - **We have the first flag.**
+      
       ![ls](Images/pickle-rick/ls-l.png)
+      
     - Looking for the second flag, I ran `find / -iname "*Ingred*" 2>/dev/null`:
       ```
       /var/www/html/Sup3rS3cretPickl3Ingred.txt
