@@ -4,7 +4,7 @@
 *   **Boot-to-root** - easy
 *   **User Flag, Root Flag**
 *   **Room Addr:** [https://tryhackme.com/room/jackofalltrades](https://tryhackme.com/room/jackofalltrades)
-*   **official Write-up https://muirlandoracle.co.uk/2020/03/23/jack-of-all-trades-write-up/
+*   **official Write-up** https://muirlandoracle.co.uk/2020/03/23/jack-of-all-trades-write-up/
 
 Jack is a man of a great many talents. The zoo has employed him to capture the penguins due to his years of penguin-wrangling experience, but all is not as it seems... We must stop him! Can you see through his facade of a forgetful old toymaker and bring this lunatic down?
 
