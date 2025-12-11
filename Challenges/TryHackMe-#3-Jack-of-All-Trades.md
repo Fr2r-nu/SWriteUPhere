@@ -244,7 +244,7 @@ root@ip-10-65-80-26:~# curl 10.65.149.85:22
 
     `find / -type f -user root -perm -4000 2>/dev/null`
 
-    ![strings](Challenges/Images/jack-of-all-trades/SUIDbinaries.png)
+    ![strings](Images/jack-of-all-trades/SUIDbinaries.png)
 
 *   The binary named `strings`(strings command) has the SUID bit set and is owned by root. This means that if we run `strings`, it executes with root privileges.
 *   to read the root flag: `strings /root/root.txt` 
