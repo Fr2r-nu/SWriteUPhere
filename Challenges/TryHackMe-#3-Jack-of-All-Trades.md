@@ -126,8 +126,7 @@ root@ip-10-65-80-26:~# curl 10.65.149.85:22
     *   ![someone is making fun of us](Images/jack-of-all-trades/stego-image.png)
 	
 	*someone is making fun of us*
-
-        *This pattern was seen in another challenge from the same author, but I don't know why I didn't trust my intuition here and check `header.jpg` first.*
+       
 
     *   `steghide extract -sf header.jpg` - A file called `cms.creds` is inside:
 
