@@ -123,9 +123,9 @@ root@ip-10-65-80-26:~# curl 10.65.149.85:22
 
     *   **Password:** `u?WtKSraq` - This is the passphrase (not the SSH or login form password), the key to see what's inside those images in the `/assets` directory.
 
-    *   ![someone is making fun of us](Images/jack-of-all-trades/stego-image.png)
+       ![someone is making fun of us](Images/jack-of-all-trades/stego-image.png)
 	
-	*someone is making fun of us*
+       *someone is making fun of us*
        
 
     *   `steghide extract -sf header.jpg` - A file called `cms.creds` is inside:
@@ -251,5 +251,3 @@ root@ip-10-65-80-26:~# curl 10.65.149.85:22
 
 **Done.**
    
-
-    
