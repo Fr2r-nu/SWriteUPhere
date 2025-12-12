@@ -68,6 +68,7 @@ root@ip-10-65-80-26:~# curl 10.65.149.85:22
 *   **About `steghide`**: [https://0xrick.github.io/lists/stego/](https://0xrick.github.io/lists/stego/) - [https://www.hackercoolmagazine.com/beginners-guide-to-steghide/](https://www.hackercoolmagazine.com/beginners-guide-to-steghide/)
     
     > `steghide info file` : Displays info about a file and whether it has embedded data.
+
     > `steghide extract -sf file` : Extracts embedded data from a file.
 
     ![stego.jpg](Images/jack-of-all-trades/stego.jpg)
