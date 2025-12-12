@@ -228,7 +228,7 @@ root@ip-10-65-80-26:~# curl 10.65.149.85:22
 
     ![jack's pass list](Images/jack-of-all-trades/password-list.png)
 
-*   Create a password list and use Hydra to find Jack's SSH password:
+*   Created a password list and used Hydra to find Jack's SSH password:
 
     `hydra -l jack -P jack-pass-list ssh://<target-ip>:80` - The OpenSSH service is hosted on port 80 in this challenge.
 
@@ -236,7 +236,7 @@ root@ip-10-65-80-26:~# curl 10.65.149.85:22
 
 *   `ssh jack@<target-ip> -p 80`
 
-*   You'll see an image named `user.jpg`. You can download it to the attack box using `scp -P 80 jack@<target-ip>:/home/jack/user.jpg .`. If you open the image, you'll see the first flag.
+*   here you'll see an image named `user.jpg`. and if we download it to the attack box using `scp -P 80 jack@<target-ip>:/home/jack/user.jpg .`. we'll see the first after opening the image.
 
 ### **6. Becoming Root**
 
